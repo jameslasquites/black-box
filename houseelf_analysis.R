@@ -12,3 +12,22 @@ GC.percent <- function(sequence){
 for(sequence in houseelf$dnaseq){
   print(round(GC.percent(sequence), digits = 2))
 }
+GC_percent <- GC.percent(houseelf$dnaseq)
+
+#Problem # 7
+
+get_size_class <- function(ear_length){
+  # Calculate the size class for one or more earth lengths
+  ear_lengths <- ifelse(ear_length > 10, "large", "small")
+  return(ear_lengths)
+}
+size_class <- print(get_size_class(houseelf$earlength))
+house_elf.analyzed <- data.frame(houseelf$id,size_class,GC_percent)
+write.csv(house_elf.analyzed, file = "house_elf.analyzed.csv")
+
+
+
+
+
+
+
